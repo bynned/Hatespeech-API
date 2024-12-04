@@ -18,6 +18,11 @@ except Exception as e:
     model = None
     tfidf_vectorizer = None
 
+@app.route("/")
+def hello():
+    return "Welcome to HatespeechAPI!"
+
+
 @app.route('/api/predict', methods=['POST'])
 def predict():
     """Predict hate speech based on input text."""
