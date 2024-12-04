@@ -77,24 +77,44 @@ The API handles errors gracefully and returns appropriate HTTP status codes and 
 - Pre-trained model file (`hatespeech_model.h5`)
 - TF-IDF vectorizer file (`tfidf_vectorizer.pkl`)
 
-### Installation
-1. Clone the repository.
+### **Option 1: Using Docker**
+
+If you prefer to use Docker, you can quickly run the application by pulling the pre-built Docker image from Docker Hub.
+
+1. **Pull the Docker Image**:
+   You can pull the pre-built Docker image for this API:
+   ```bash
+   docker pull bynned/hatespeech-api
+   ```
+
+2. **Run the Docker Container**:
+   After pulling the image, run the container using the following command:
+   ```bash
+   docker run -p 5050:5050 bynned/hatespeech-api
+   ```
+   This will start the Flask API inside the container, accessible on `http://localhost:5050`.
+
+---
+
+### **Option 2: Running the Application Manually**
+
+If you prefer to run the API manually without Docker, follow the steps below:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/hatespeech-api.git
+   ```
+
 2. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
 3. Place the `hatespeech_model.h5` and `tfidf_vectorizer.pkl` files in the project directory.
 
-### Running the Server
-Start the API server:
-```bash
-python app.py
-```
-The server will run on `http://localhost:5050`.
+4. Start the API server:
+   ```bash
+   python toxic_check_service.py
+   ```
+   The server will run on `http://localhost:5050`.
 
 ---
-
-## Notes
-1. Ensure that both the model (`hatespeech_model.h5`) and the vectorizer (`tfidf_vectorizer.pkl`) are properly trained and available in the project directory.
-2. Update the model and vectorizer as needed to improve prediction accuracy.
-3. The threshold for hate speech classification is set at 0.5; adjust it based on the requirements.
