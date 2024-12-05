@@ -2,9 +2,13 @@ from flask import Flask, request, jsonify
 import traceback
 import tensorflow as tf
 import joblib
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+
+#Enable CORS
+CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Load the model and vectorizer
 try:
