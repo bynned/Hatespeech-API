@@ -1,4 +1,4 @@
-# Hate Speech Prediction API Documentation
+# Hatespeech Prediction API Documentation
 
 ## Overview
 This API is designed to detect hate speech in a given text using a pre-trained TensorFlow model and a TF-IDF vectorizer. The model predicts whether a given text contains hate speech and provides the probability of the prediction.
